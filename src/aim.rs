@@ -42,11 +42,15 @@ pub fn normalize_angle(angle: f32) -> f32 {
         normalized
     }
 }
-
 pub fn smooth_angles(current:FRotator, target:FRotator, smoothing: f32, max_delta:f32) -> FRotator{
     FRotator { 
         pitch: smooth_angle(current.pitch, target.pitch, smoothing, max_delta), 
         yaw: smooth_angle(current.yaw, target.yaw, smoothing, max_delta), 
         roll: 0.0 
     }
+}
+
+pub fn smooth_aim(camera_position: &FVector, target_position: &FVector, current:FRotator, smoothing: f32, max_delta: f32) -> FRotator {
+    let aim = calculate_aim(camera_position, target_position, 0.0);
+    smooth_angles(current, aim, smoothing, max_delta)
 }
