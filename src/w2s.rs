@@ -25,7 +25,7 @@ pub fn world2screen(position: FVector, pov: FMinimalViewInfo, window_size:[u32;2
         z: v_delta.dot(&v_axis_x),
     };
 
-    if v_transformed.z < 1f32 {
+    if v_transformed.z < 1.0 {
         return None
     }
 
