@@ -4,3 +4,4 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+unreal-types = {version = "*", git = "https://github.com/B1Fr0st/unreal-types.git"} #unreal engine structs
